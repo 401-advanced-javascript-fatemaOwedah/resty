@@ -6,13 +6,9 @@ class Form extends React.Component {
     super(props);
     this.state = {
       method : 'method' ,
-      url : 'initial uri'
+      url : 'url'
     };
   }
-  handleClick = (e) => {
-    e.preventDefault();
-    this.setState({method : this.method , url : this.url})
-  };
   handleChangeUrl = (e) => {
     e.preventDefault();
     const url = e.target.value;
@@ -22,6 +18,10 @@ class Form extends React.Component {
     e.preventDefault();
     const method = e.target.value;
     this.method = method;
+  };
+  handleClick = (e) => {
+    e.preventDefault();
+    this.setState({method : this.method , url : this.url})
   };
   render() {
     return (
@@ -42,7 +42,9 @@ class Form extends React.Component {
           <input onChange={this.handleChangeMethod} type="radio" id="delete" name="method" value="DELETE"/>
         </div>
         <div className ='result'>
+          <h3>
           {this.state.method} {this.state.url}
+          </h3>
         </div>
       </main>
     );

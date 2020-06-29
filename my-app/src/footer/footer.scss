@@ -1,8 +1,10 @@
 footer{
-    clear: both;
-    p{
-        background-color: #767676;
-        margin: 0px;
-        padding: 1em;
-    }
+  clear: both;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+  height: 10vh;
+  h3{
+    color: black;
+  }
 }
