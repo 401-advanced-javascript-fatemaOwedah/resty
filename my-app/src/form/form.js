@@ -2,55 +2,51 @@ import React from 'react';
 import './form.scss';
 
 class Form extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        method : 'method' ,
-        url : 'Initial url'
-        };
-    }
-    handleClick = (e) => {
-      e.preventDefault();
-      this.setState({method : this.state.method , url : this.state.url});
+  constructor(props) {
+    super(props);
+    this.state = {
+      method : 'method' ,
+      url : 'initial uri'
     };
-    handleUrl = (e) => {
-      e.preventDefault();
-        this.setState({url : e.target.value});
-       };
-    handleMethod = (e) => {
-      e.preventDefault();
-        this.setState({method : e.target.value});
-    };
-    
-    render() {
-      return (
-        < main >
-            <div className="url">
-          <label>URL:</label>
-          <input type="text" onChange={this.handleUrl} />
-          <button onClick={this.handleClick}>GO!</button>
-          <br/>
-            </div>
-            <div className="method">
-            <label>GET</label>
-          <input onChange={this.handleMethod} type="radio" id="get" name="method" value="GET"/>
-          
-          <label>POST</label> 
-          <input onChange={this.handleMethod} type="radio" id="post" name="method" value="POST"/>
-          <label>PUT</label>
-          <input onChange={this.handleMethod} type="radio" id="put" name="method" value="PUT"/>
-          
-          <label>DELETE</label>
-          <input onChange={this.handleMethod} type="radio" id="delete" name="method" value="DELETE"/>
-          
-            </div>
-
-          <div className ='result'>
-            {this.state.method}   {this.state.url}
-          </div>
-        </main>
-      );
-    }
   }
+  handleClick = (e) => {
+    e.preventDefault();
+    this.setState({method : this.method , url : this.url})
+  };
+  handleChangeUrl = (e) => {
+    e.preventDefault();
+    const url = e.target.value;
+    this.url = url
+  };
+  handleChangeMethod = (e) => {
+    e.preventDefault();
+    const method = e.target.value;
+    this.method = method;
+  };
+  render() {
+    return (
+      < main className="main">
+        <div className="url">
+          <label>URL:</label>
+          <input type="text" onChange={this.handleChangeUrl} />
+          <button onClick={this.handleClick}>GO!</button>
+        </div>
+        <div className="method">
+          <label>GET</label>
+          <input onChange={this.handleChangeMethod} type="radio" id="get" name="method" value="GET"/>
+          <label>POST</label>
+          <input onChange={this.handleChangeMethod} type="radio" id="post" name="method" value="POST"/>
+          <label>PUT</label>
+          <input onChange={this.handleChangeMethod} type="radio" id="put" name="method" value="PUT"/>
+          <label>DELETE</label>
+          <input onChange={this.handleChangeMethod} type="radio" id="delete" name="method" value="DELETE"/>
+        </div>
+        <div className ='result'>
+          {this.state.method} {this.state.url}
+        </div>
+      </main>
+    );
+  }
+}
 
 export default Form;
