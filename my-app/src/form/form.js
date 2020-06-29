@@ -25,23 +25,19 @@ class Form extends React.Component {
   };
   render() {
     return (
-      < main className="main">
-        <div className="url">
+      <main>
+        <div class="url">
           <label>URL:</label>
           <input type="text" onChange={this.handleUrl} />
           <button onClick={this.handleClick}>GO!</button>
         </div>
-        <div className="method">
-          <label>GET</label>
-          <input onChange={this.handleMethod} type="radio" id="get" name="method" value="GET"/>
-          <label>POST</label>
-          <input onChange={this.handleMethod} type="radio" id="post" name="method" value="POST"/>
-          <label>PUT</label>
-          <input onChange={this.handleMethod} type="radio" id="put" name="method" value="PUT"/>
-          <label>DELETE</label>
-          <input onChange={this.handleMethod} type="radio" id="delete" name="method" value="DELETE"/>
+        <div class="method">
+          <button onClick={this.handleMethod} value="GET" >GET</button>
+          <button onClick={this.handleMethod} value="POST">POST</button>
+          <button onClick={this.handleMethod} value="PUT">PUT</button>
+          <button onClick={this.handleMethod} value="DELETE">DELETE</button>
         </div>
-        <div className ='result'>
+        <div class ='result'>
           <h3>
           {this.state.method} {this.state.url}
           </h3>

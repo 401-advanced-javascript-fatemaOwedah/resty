@@ -20,21 +20,18 @@ main{
   }
   .method{
     text-align: center;
-    label{
-      font-size: 25px;
-      }
-    input{
+    button{
       margin: 0px 10px;
-      font-size: 25px;
-      height: 2vh;
-      width: 40px;
+      height: 5vh;
+      width: 100px;
+      font-size: 20px;
     }
   }
   .result{
     margin: 10px auto;
     padding: 2em;
     width: 90%;
-    height: 49vh;
+    height: 48vh;
     background-color: gainsboro;
   }
 }
