@@ -11,21 +11,20 @@ class Form extends React.Component {
     }
     handleClick = (e) => {
       e.preventDefault();
-      this.setState({method : this.method , url : this.url});
+      this.setState({method : this.state.method , url : this.state.url});
     };
     handleUrl = (e) => {
-        const url = e.target.value;
-        this.setState({url : url});
+      e.preventDefault();
+        this.setState({url : e.target.value});
        };
     handleMethod = (e) => {
-        const method = e.target.value;
-        this.setState({method : method});
+      e.preventDefault();
+        this.setState({method : e.target.value});
     };
     
     render() {
       return (
         < main >
-        <form>
             <div className="url">
           <label>URL:</label>
           <input type="text" onChange={this.handleUrl} />
@@ -49,7 +48,6 @@ class Form extends React.Component {
           <div className ='result'>
             {this.state.method}   {this.state.url}
           </div>
-          </form>
         </main>
       );
     }
