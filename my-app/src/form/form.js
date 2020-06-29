@@ -9,12 +9,12 @@ class Form extends React.Component {
       url : 'url'
     };
   }
-  handleChangeUrl = (e) => {
+  handleUrl = (e) => {
     e.preventDefault();
     const url = e.target.value;
     this.url = url
   };
-  handleChangeMethod = (e) => {
+  handleMethod = (e) => {
     e.preventDefault();
     const method = e.target.value;
     this.method = method;
@@ -28,18 +28,18 @@ class Form extends React.Component {
       < main className="main">
         <div className="url">
           <label>URL:</label>
-          <input type="text" onChange={this.handleChangeUrl} />
+          <input type="text" onChange={this.handleUrl} />
           <button onClick={this.handleClick}>GO!</button>
         </div>
         <div className="method">
           <label>GET</label>
-          <input onChange={this.handleChangeMethod} type="radio" id="get" name="method" value="GET"/>
+          <input onChange={this.handleMethod} type="radio" id="get" name="method" value="GET"/>
           <label>POST</label>
-          <input onChange={this.handleChangeMethod} type="radio" id="post" name="method" value="POST"/>
+          <input onChange={this.handleMethod} type="radio" id="post" name="method" value="POST"/>
           <label>PUT</label>
-          <input onChange={this.handleChangeMethod} type="radio" id="put" name="method" value="PUT"/>
+          <input onChange={this.handleMethod} type="radio" id="put" name="method" value="PUT"/>
           <label>DELETE</label>
-          <input onChange={this.handleChangeMethod} type="radio" id="delete" name="method" value="DELETE"/>
+          <input onChange={this.handleMethod} type="radio" id="delete" name="method" value="DELETE"/>
         </div>
         <div className ='result'>
           <h3>
